@@ -1,33 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AventStack.ExtentReports;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
+using SamplePOCProject.PageObjects;
+using System;
+using System.Configuration;
+
 namespace SamplePOCProject
 {
     [TestFixture]
     public class LoginTest
     {
 
-        IWebDriver driver;
+        public IWebDriver driver;
+        protected ExtentReports _extent;
+        protected ExtentTest _test;
+        Utils.Utils utils;
 
+        [OneTimeSetUp]
+        public void OneTimeSetup()
+        {
+            String A = ConfigurationManager.AppSettings["NameOfHtmlReport"];
+            utils = new Utils.Utils(driver);
+            _extent = utils.CreateExtentReport(ConfigurationManager.AppSettings["NameOfHtmlReport"]);
+        }
         [SetUp]
-        public void Setup() {
+        public void Setup()
+        {
+            _test = _extent.CreateTest(TestContext.CurrentContext.Test.MethodName);
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            utils = new Utils.Utils(driver);
+            driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["loginUrl"]);
         }
         [Test]
-        public void LoginTestIntoApp()
+        public void LoginTestIntoApp_Pass()
         {
-
+            Login login = new Login(driver);
+            login.EnterUsername(ConfigurationManager.AppSettings["username"]);
+            login.EnterPassword(ConfigurationManager.AppSettings["password"]);
+            login.ClickOnLogin();
+            PageObjects.Dashboard.Dashboard dasboard = new PageObjects.Dashboard.Dashboard(driver);
+            Assert.IsTrue(driver.FindElement(By.Id(dasboard.BuurgerMenu_Element)).Displayed);
+        }
+        [Test]
+        public void LoginTestIntoApp_Fail()
+        {
+            Login login = new Login(driver);
+            login.EnterUsername(ConfigurationManager.AppSettings["username"]);
+            login.EnterPassword(ConfigurationManager.AppSettings["username"]);
+            login.ClickOnLogin();
+            PageObjects.Dashboard.Dashboard dasboard = new PageObjects.Dashboard.Dashboard(driver);
+            Assert.IsTrue(driver.FindElement(By.Id(dasboard.BuurgerMenu_Element)).Displayed);
         }
         [TearDown]
-        public void TearDown() {
+        public void TearDown()
+        {
+            utils.LogTestStatus(_test, driver);
+            _extent.Flush();
             driver.Quit();
+            
         }
     }
 }
