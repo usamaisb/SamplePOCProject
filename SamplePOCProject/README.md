@@ -3,7 +3,7 @@
 ***Requirements***<br/>
 <pre>Visual Studio<br/></pre>
 ***Installations***<br/>
-<pre>[Visual Studio Community verison 2022](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022)<br/></pre>
+[Visual Studio Community verison 2022](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022)<br/>
 <br/>***Configurations***<br/>
 *<pre>The project configuratons is present in App.config file. Nuget package: System.Configuration.ConfigurationManager is used to manage app.config file.<br/>
 All configurations like username, passwords and paths can be placed in this file..<br/>
