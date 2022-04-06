@@ -4,7 +4,7 @@
 *Visual Studio*<br/>
 ***Installations***<br/>
 1. [Visual Studio Community verison 2022](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022) <br/>
-***Configurations***<br/>
+**Configurations**<br/>
 *The project configuratons is present in App.config file. Nuget package: System.Configuration.ConfigurationManager is used to manage app.config file.<br/>
 All configurations like username, passwords and paths can be placed in this file..<br/>
 Project tests are placed inside test folder.<br/>
