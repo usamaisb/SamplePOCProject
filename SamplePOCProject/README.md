@@ -1,5 +1,5 @@
 **Project introduction**<br/>
-*This project is created to sample a POC to get start with dotnet seleium automation framework* <br/>
+*This project is created to sample a POC to get start with dotnet seleium automation project with nunit testing framework* <br/>
 ***Requirements***<br/>
 *Visual Studio*<br/>
 ***Installations***<br/>
@@ -11,3 +11,8 @@ Project tests are placed inside test folder.<br/>
 Page objects are placed inside pageObjects folder.<br/>
 All other utils and helper functions are palced inside utils folder.<br/>
 Test execution report will generated at the paths specified inside app.config file.<br/>*
+***Troubleshoot***<br/>
+*Troubleshooting can be done using the test html report that will not only contains the test execution results but will also contains screenshots for failed test that will help in test faiuire anlysis.<br/>
+***Mantainers***<br/>
+**Usama Arif**<br/>
+**Fahad Abbasi**<br/>
