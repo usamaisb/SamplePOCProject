@@ -3,7 +3,7 @@
  1. _Git_ <br/>
 [Clone the Git repo](https://github.com/usamaisb/SamplePOCProject.git) <br/>
 **Project introduction**<br/>
-*This project is created to sample a POC to get start with dotnet seleium automation framewor*
+*This project is created to sample a POC to get start with dotnet seleium automation framewor* <br/>
 **Requirements**<br/>
 *Visual Studio*
 **Installations**<br/>
