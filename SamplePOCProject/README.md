@@ -14,5 +14,5 @@ Test execution report will generated at the paths specified inside app.config fi
 <br/>***Troubleshoot***<br/>
 <pre>Troubleshooting can be done using the test html report that will not only contains the test execution results but will also contains screenshots for failed test that will help in test faiuire anlysis.<br/></pre>
 <br/>***Mantainers***<br/>
-**Usama Arif**<br/>
-**Fahad Abbasi**<br/>
+<pre>**Usama Arif**<br/>
+**Fahad Abbasi**<br/></pre>
