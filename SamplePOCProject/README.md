@@ -12,7 +12,7 @@ Page objects are placed inside pageObjects folder.<br/>
 All other utils and helper functions are palced inside utils folder.<br/>
 Test execution report will generated at the paths specified inside app.config file.<br/>*
 <br/>***Troubleshoot***<br/>
-*Troubleshooting can be done using the test html report that will not only contains the test execution results but will also contains screenshots for failed test that will help in test faiuire anlysis.<br/>
+Troubleshooting can be done using the test html report that will not only contains the test execution results but will also contains screenshots for failed test that will help in test faiuire anlysis.<br/>
 <br/>***Mantainers***<br/>
 **Usama Arif**<br/>
 **Fahad Abbasi**<br/>
