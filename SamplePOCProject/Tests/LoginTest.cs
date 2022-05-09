@@ -1,7 +1,7 @@
-﻿using AventStack.ExtentReports;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using RelevantCodes.ExtentReports;
 using SamplePOCProject.PageObjects;
 using System;
 using System.Configuration;
@@ -27,7 +27,7 @@ namespace SamplePOCProject
         [SetUp]
         public void Setup()
         {
-            _test = _extent.CreateTest(TestContext.CurrentContext.Test.MethodName);
+            _test = _extent.StartTest(TestContext.CurrentContext.Test.MethodName);
             driver = new ChromeDriver();
             utils = new Utils.Utils(driver);
             driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["loginUrl"]);
