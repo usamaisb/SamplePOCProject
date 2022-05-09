@@ -9,7 +9,7 @@ using System.Configuration;
 namespace SamplePOCProject
 {
     [TestFixture]
-    public class LoginTest
+    public class LoginTest2
     {
 
         public IWebDriver driver;
@@ -33,8 +33,8 @@ namespace SamplePOCProject
             driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["loginUrl"]);
         }
         [Test]
-        [Category("SmokeTests")]
-        public void LoginTestIntoApp_Pass_1()
+        [Category("RegressionTests")]
+        public void LoginTestIntoApp_Pass_3()
         {
             Login login = new Login(driver);
             login.EnterUsername(ConfigurationManager.AppSettings["username"]);
@@ -44,8 +44,8 @@ namespace SamplePOCProject
             Assert.IsTrue(driver.FindElement(By.Id(dasboard.BuurgerMenu_Element)).Displayed);
         }
         [Test]
-        [Category("SmokeTests")]
-        public void LoginTestIntoApp_Fail_2()
+        [Category("RegressionTests")]
+        public void LoginTestIntoApp_Fail_4()
         {
             Login login = new Login(driver);
             login.EnterUsername(ConfigurationManager.AppSettings["username"]);
@@ -60,7 +60,7 @@ namespace SamplePOCProject
             utils.LogTestStatus(_test, driver);
             _extent.Flush();
             driver.Quit();
-            
+
         }
     }
 }
